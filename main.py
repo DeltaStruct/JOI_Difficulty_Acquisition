@@ -14,4 +14,4 @@ jsonf = "g.json"
 spread_sheet_key = "1zXDtkFmskO5NSxkqck8uDbcJtAhTVZtzPh2hLw64Sw4"
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表")
 for i in range(ws.row_count):
-  print(ws.cell(i,4).value)
+  print(ws.cell(i+1,4).value)
