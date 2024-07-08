@@ -29,11 +29,7 @@ jobs:
         run: |
           pip install gspread
           pip install oauth2client
-          cat /home/runner/work/_temp/773329fb-6744-4a80-af97-8b6251c4926b.sh
-          cd ..
           echo ${{secrets.GOOGLE_SHEETS_API}} >> g.json
-          cat aaaaaa
-          cd -
 
       # Runs a single command using the runners shell
       - name: Get
