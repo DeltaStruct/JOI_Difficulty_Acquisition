@@ -14,6 +14,8 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  gsk: ${{secrets.GOOGLE_SHEETS_API}}
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -29,7 +31,7 @@ jobs:
         run: |
           pip install gspread
           pip install oauth2client
-          echo "${{secrets.GOOGLE_SHEETS_API}}" >> g.json
+          echo $gsk >> g.json
 
       # Runs a single command using the runners shell
       - name: Get
