@@ -20,5 +20,6 @@ for i in range(ws.row_count):
   print("fetch: " + task)
   print(vote)
   f = open(task,'w')
-  write(vote)
+  f.write(vote)
+  f.close()
   time.sleep(2)
