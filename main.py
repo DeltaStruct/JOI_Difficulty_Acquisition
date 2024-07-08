@@ -12,7 +12,6 @@ def connect_gspread(jsonf,key):
     return worksheet
 
 # ここでjsonfile名と2-2で用意したkeyを入力
-jsonf = "../g.json"
-!cat ../g,json
+jsonf = "g.json"
 spread_sheet_key = "1zXDtkFmskO5NSxkqck8uDbcJtAhTVZtzPh2hLw64Sw4"
 ws = connect_gspread(jsonf,spread_sheet_key)
