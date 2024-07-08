@@ -16,13 +16,13 @@ spread_sheet_key = "1zXDtkFmskO5NSxkqck8uDbcJtAhTVZtzPh2hLw64Sw4"
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表")
 for i in range(ws.row_count):
   task = ws.cell(i+1,4).value
-  vote = ws.cell(i+1,6).value
   if task==None:
-    time.sleep(10)
+    time.sleep(1)
+  vote = ws.cell(i+1,6).value
     continue
   print("fetch: " + task)
   print(vote)
   f = open(task,'w')
   f.write(vote)
   f.close()
-  time.sleep(10)
+  time.sleep(2)
