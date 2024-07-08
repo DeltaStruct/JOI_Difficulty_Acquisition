@@ -16,6 +16,10 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 env:
   gsk: ${{secrets.GOOGLE_SHEETS_API}}
+permissions:
+  actions: write
+  checks: write
+  contents: write
 jobs:
   # This workflow contains a single job called "build"
   build:
