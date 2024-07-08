@@ -17,7 +17,7 @@ ws = connect_gspread(jsonf,spread_sheet_key,"難易度表")
 for i in range(ws.row_count):
   task = ws.cell(i+1,4).value
   if task==None:
-    time.sleep(1)
+    time.sleep(1.05)
     continue
   vote = ws.cell(i+1,6).value
   print("fetch: " + task)
@@ -25,4 +25,4 @@ for i in range(ws.row_count):
   f = open(task,'w')
   f.write(vote)
   f.close()
-  time.sleep(2)
+  time.sleep(2.1)
