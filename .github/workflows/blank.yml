@@ -38,4 +38,4 @@ jobs:
         run: python3 main.py
 
       - name: Delete Key
-        run: sudo rm -rf ../g.json
+        run: sudo rm -rf g.json
