@@ -30,8 +30,10 @@ jobs:
           pip install gspread
           pip install oauth2client
           echo ${{secrets.GOOGLE_SHEETS_API}} >> ../g.json
-          cat ../g.json
 
       # Runs a single command using the runners shell
       - name: Get
         run: python3 main.py
+
+      - name: Delete Key
+        run: sudo rm -rf ../g.json
