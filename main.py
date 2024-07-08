@@ -18,11 +18,11 @@ for i in range(ws.row_count):
   task = ws.cell(i+1,4).value
   vote = ws.cell(i+1,6).value
   if task==None:
-    time.sleep(2)
+    time.sleep(10)
     continue
   print("fetch: " + task)
   print(vote)
   f = open(task,'w')
   f.write(vote)
   f.close()
-  time.sleep(2)
+  time.sleep(10)
