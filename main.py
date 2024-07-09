@@ -1,4 +1,4 @@
-import gspread
+1qimport gspread
 import json
 from oauth2client.service_account import ServiceAccountCredentials
 import time
@@ -50,6 +50,8 @@ for i in range(ws.row_count):
     task.replace("JOIG-","JOIG")
   print("fetch: " + task)
   print(vote)
+  if vote == None:
+    vote = ""
   f = open(task,'w')
   f.write(vote)
   f.close()
