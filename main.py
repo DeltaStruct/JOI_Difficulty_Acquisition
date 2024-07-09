@@ -21,12 +21,24 @@ for i in range(ws.row_count):
     continue
   vote = ws.cell(i+1,6).value
   if "春合宿" not in task:
-    if "春" in task:
-      task = task.replace("春","春合宿")
-    elif "合宿" in task:
-      task = task.replace("合宿","春合宿")
-  if "JOIG-" in task:
-    task = task.replace("JOIG-","JOIG")
+    task = task.replace("春","春合宿")
+  if "春合宿" not in task:
+    task = task.replace("合宿","春合宿")
+
+  task = task.replace("JOIG-","JOIG")
+
+  task = task.replace('１','1');
+  task = task.replace('２','2');
+  task = task.replace('３','3');
+  task = task.replace('４','4');
+  task = task.replace('５','5');
+  task = task.replace('６','6');
+  task = task.replace('７','7');
+  task = task.replace('８','8');
+  task = task.replace('９','9');
+  task = task.replace('０','0');
+  task = task.replace(' ','');
+  
   print("fetch: " + task)
   print(vote)
   f = open(task,'w')
@@ -43,6 +55,7 @@ for i in range(ws.row_count):
   vote = ws.cell(i+1,6).value
   if "春合宿" not in task:
     task = task.replace("春","春合宿")
+  if "春合宿" not in task:
     task = task.replace("合宿","春合宿")
 
   task = task.replace("JOIG-","JOIG")
