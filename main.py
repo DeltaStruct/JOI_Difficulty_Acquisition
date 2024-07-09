@@ -41,12 +41,12 @@ for i in range(ws.row_count):
     time.sleep(1)
     continue
   vote = ws.cell(i+1,6).value
-  if task not in "春合宿":
-    if task in "春":
+  if "春合宿" not in task:
+    if "春" in task:
       task.replace("春","春合宿")
-    elif task in "合宿":
+    elif "合宿" in task:
       task.replace("合宿","春合宿")
-  if task in "JOIG-":
+  if "JOIG-" in task:
     task.replace("JOIG-","JOIG")
   print("fetch: " + task)
   print(vote)
