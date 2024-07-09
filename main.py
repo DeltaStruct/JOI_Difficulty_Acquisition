@@ -1,4 +1,4 @@
-1qimport gspread
+import gspread
 import json
 from oauth2client.service_account import ServiceAccountCredentials
 import time
