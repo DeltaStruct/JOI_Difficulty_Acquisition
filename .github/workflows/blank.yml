@@ -45,6 +45,8 @@ jobs:
         run: sudo rm -rf g.json
 
       - run: |
+          touch last_update
+          date > last_update
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
