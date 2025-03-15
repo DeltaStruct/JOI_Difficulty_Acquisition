@@ -59,6 +59,8 @@ for i in range(ws.row_count):
     task = task.replace("合宿","春合宿")
 
   task = task.replace("JOIG-","JOIG")
+  task = task.replace("本選-","本選")
+  task = task.replace("予選-","予選")
 
   task = task.replace('１','1');
   task = task.replace('２','2');
