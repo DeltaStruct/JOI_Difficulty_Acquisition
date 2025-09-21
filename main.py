@@ -47,6 +47,7 @@ for i in range(ws.row_count):
   time.sleep(2)
 
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表 New")
+
 for i in range(ws.row_count):
   task = ws.cell(i+1,4).value
   if task==None:
@@ -73,12 +74,11 @@ for i in range(ws.row_count):
   task = task.replace('９','9');
   task = task.replace('０','0');
   task = task.replace(' ','');
-  
+  f = json.load(open("main.json",'r'))
   print("fetch: " + task)
   print(vote)
   if vote == None:
     vote = ""
-  f = open(task,'w')
-  f.write(vote)
-  f.close()
+  f[task] = vote
   time.sleep(2)
+json.dump(f,open("main.json",'w'))
