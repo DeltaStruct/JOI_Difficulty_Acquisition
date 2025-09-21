@@ -14,7 +14,7 @@ def connect_gspread(jsonf,key,name):
 jsonf = "g.json"
 spread_sheet_key = "1zXDtkFmskO5NSxkqck8uDbcJtAhTVZtzPh2hLw64Sw4"
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表")
-f = json.load(open("main.json","wr"))
+f = dict()
 for i in range(ws.row_count):
   task = ws.cell(i+1,4).value
   if task==None:
