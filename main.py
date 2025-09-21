@@ -81,4 +81,4 @@ for i in range(ws.row_count):
     vote = ""
   f[task] = vote
   time.sleep(2)
-json.dump(f,open("main.json",'w'))
+json.dump(f,open("main.json",'w',encoding="utf-8"),indent=4,ensure_ascii=False)
