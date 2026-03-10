@@ -8,7 +8,9 @@ def connect_gspread(jsonf,key,name):
   credentials = ServiceAccountCredentials.from_json_keyfile_name(jsonf, scope)
   gc = gspread.authorize(credentials)
   SPREADSHEET_KEY = key
+  print(1)
   worksheet = gc.open_by_key(SPREADSHEET_KEY).worksheet(name)
+  print(2)
   return worksheet
 
 jsonf = "g.json"
