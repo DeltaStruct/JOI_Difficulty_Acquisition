@@ -17,7 +17,7 @@ jsonf = "g.json"
 spread_sheet_key = "1zXDtkFmskO5NSxkqck8uDbcJtAhTVZtzPh2hLw64Sw4"
 print("Load 難易度表")
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表").get_all_values()
-print(3)
+print(len(ws))
 print(ws)
 f = dict()
 for i in range(len(ws)):
