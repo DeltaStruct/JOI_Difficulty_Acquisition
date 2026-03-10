@@ -16,12 +16,12 @@ spread_sheet_key = "1zXDtkFmskO5NSxkqck8uDbcJtAhTVZtzPh2hLw64Sw4"
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表").get_all_values()
 print(ws)
 f = dict()
-for i in range(ws.row_count):
-  task = ws[i+1][4].value
+for i in len(ws):
+  task = ws[i][3].value
   if task==None:
     time.sleep(1)
     continue
-  vote = ws[i+1][6].value
+  vote = ws[i][5].value
   if "春合宿" not in task:
     task = task.replace("春","春合宿")
   if "春合宿" not in task:
@@ -56,12 +56,12 @@ for i in range(ws.row_count):
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表 New").get_all_values()
 print(ws)
 
-for i in range(ws.row_count):
-  task = ws[i+1][4].value
+for i in len(ws):
+  task = ws[i][3].value
   if task==None:
     time.sleep(1)
     continue
-  vote = ws[i+1][6].value
+  vote = ws[i][5].value
   if "春合宿" not in task:
     task = task.replace("春","春合宿")
   if "春合宿" not in task:
