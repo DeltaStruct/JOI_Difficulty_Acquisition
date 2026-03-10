@@ -13,6 +13,7 @@ def connect_gspread(jsonf,key,name):
 
 jsonf = "g.json"
 spread_sheet_key = "1zXDtkFmskO5NSxkqck8uDbcJtAhTVZtzPh2hLw64Sw4"
+print("Load 難易度表")
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表").get_all_values()
 print(ws)
 f = dict()
@@ -53,6 +54,7 @@ for i in range(len(ws)):
   f[task] = vote
   time.sleep(2)
 
+print("Load 難易度表New")
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表 New").get_all_values()
 print(ws)
 
