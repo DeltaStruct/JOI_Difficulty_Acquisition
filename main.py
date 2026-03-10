@@ -8,21 +8,16 @@ def connect_gspread(jsonf,key,name):
   credentials = ServiceAccountCredentials.from_json_keyfile_name(jsonf, scope)
   gc = gspread.authorize(credentials)
   SPREADSHEET_KEY = key
-  print(1)
   worksheet = gc.open_by_key(SPREADSHEET_KEY).worksheet(name)
-  print(2)
   return worksheet
 
 jsonf = "g.json"
 spread_sheet_key = "1zXDtkFmskO5NSxkqck8uDbcJtAhTVZtzPh2hLw64Sw4"
-print("Load 難易度表")
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表").get_all_values()
-for a in ws:
-  print(a)
 f = dict()
 for i in range(len(ws)):
   task = ws[i][3]
-  if task==None:
+  if task=="":
     continue
   vote = ws[i][5]
   if "春合宿" not in task:
@@ -33,6 +28,8 @@ for i in range(len(ws)):
   task = task.replace("JOIG-","JOIG")
   task = task.replace("本選-","本選")
   task = task.replace("予選-","予選")
+  task = task.replace("セミファイナル-","セミファイナル")
+  task = task.replace("ファイナル-","ファイナル")
 
   task = task.replace("セミファイナル","本選")
   task = task.replace("ファイナル","春合宿")
@@ -55,13 +52,11 @@ for i in range(len(ws)):
     vote = ""
   f[task] = vote
 
-print("Load 難易度表New")
 ws = connect_gspread(jsonf,spread_sheet_key,"難易度表 New").get_all_values()
-print(ws)
 
 for i in range(len(ws)):
   task = ws[i][3]
-  if task==None:
+  if task=="":
     continue
   vote = ws[i][5]
   if "春合宿" not in task:
@@ -72,6 +67,8 @@ for i in range(len(ws)):
   task = task.replace("JOIG-","JOIG")
   task = task.replace("本選-","本選")
   task = task.replace("予選-","予選")
+  task = task.replace("セミファイナル-","セミファイナル")
+  task = task.replace("ファイナル-","ファイナル")
 
   task = task.replace("セミファイナル","本選")
   task = task.replace("ファイナル","春合宿")
